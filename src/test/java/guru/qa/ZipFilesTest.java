@@ -19,7 +19,6 @@ public class ZipFilesTest {
 
     ClassLoader classLoader = ZipFilesTest.class.getClassLoader();
 
-
     @Test
     @DisplayName("Реализовать чтение и проверку содержимого каждого файла из архива")
     void zipTest() throws Exception {
@@ -37,18 +36,16 @@ public class ZipFilesTest {
                             xls.excel.getSheetAt(0)
                                     .getRow(0)
                                     .getCell(0)
-                                    .getStringCellValue()
-                    ).contains("XLSX_example");
+                                    .getStringCellValue())
+                                    .contains("XLSX_example");
                 } else if (entry.getName().contains("csv")) {
                     CSVReader csvReader = new CSVReader(new InputStreamReader(zis, UTF_8));
                     List<String[]> csv = csvReader.readAll();
                     assertThat(csv).contains(
-                            new String[]{"name","age"},
-                            new String[]{"Elena","32"},
-                            new String[]{"Daria","29"});
+                            new String[]{"name", "age"},
+                            new String[]{"Elena", "32"},
+                            new String[]{"Daria", "29"});
                 }
-
-
             }
         }
     }
