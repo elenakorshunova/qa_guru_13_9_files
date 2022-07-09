@@ -1,0 +1,15 @@
+{
+  "bookSeriesName": "The Lord of the Rings",
+  "author": "J.R.R. Tolkien",
+  "firstBook": [
+    {
+      "name": "The Hobbit",
+      "year": 1937
+    },
+    {
+      "paperBook": true,
+      "eBook": true
+    }
+  ]
+}
+
